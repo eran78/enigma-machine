@@ -27,3 +27,12 @@ class Enigma:
     idx = self.alphabet.index(new_letter)
     new_letter = self.rotor3[idx]
     print("letter : " + letter + "\tnew_letter: " + new_letter)
+
+    
+process = Enigma()
+
+
+def shift(text, amount):
+  part1 = text[amount:26]
+  part2 = text[0:amount]
+  return part1 + part2
