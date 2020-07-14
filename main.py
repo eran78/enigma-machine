@@ -36,3 +36,7 @@ def shift(text, amount):
   part1 = text[amount:26]
   part2 = text[0:amount]
   return part1 + part2
+
+
+sentence = input('Enter sentence here:\n').lower()
+newSentence = ""
