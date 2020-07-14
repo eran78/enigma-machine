@@ -62,3 +62,6 @@ for letter in sentence:
     continue
   encryptedLetter = process.enigma_encrypt(letter)
   newSentence += encryptedLetter
+
+  
+  print(newSentence)
