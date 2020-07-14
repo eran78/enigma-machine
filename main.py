@@ -28,6 +28,23 @@ class Enigma:
     new_letter = self.rotor3[idx]
     print("letter : " + letter + "\tnew_letter: " + new_letter)
 
+    reflector_1 = {'a':'n','b':'o','c':'p','d':'q','e':'r','f':'s','g':'t','h':'u','i':'v','j':'w','k':'x','l':'y','m':'z'}
+
+    reflector_2 = {'n':'a','o':'b','p':'c','q':'d','r':'e','s':'f','t':'g','u':'h','v':'i','w':'j','x':'k','y':'l','z':'m'}
+
+    try:
+      reflector_1[new_letter]
+    except:
+      try:
+        reflector_2[new_letter]
+      except:
+        print("This letter is not in the reflector")
+      else:
+        return reflector_2[new_letter]
+    else:
+      return reflector_1[new_letter]
+      
+    return new_letter
     
 process = Enigma()
 
