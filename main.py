@@ -1,28 +1,29 @@
-def alphabet():
+import string
 
-  alphabet = "abcdefghijklmnopqrstuvwxyz"
-  rotor1 = "ghijklmnopqrstuvwxyzabcdef"
-  rotor2 = "mnopqrstuvwxyzabcdefghijkl"
-  rotor3 = "stuvwxyzabcdefghijklmnopqr"
-  
-alphabet()
 
 class Enigma:
-  def ___init___(self, rotor1=None, rotor2=None, rotor3=None):
-    self.alphabet = alphabet
-  if rotor1 != None or rotor2 != None or rotor3 != None:
-    self.rotor1 = rotor1
-    self.rotor2 = rotor2
-    self.rotor3 = rotor3
-  self.reflector = [letter for letter in reversed(self.alphabet)]
+  alphabet = list(string.ascii_lowercase)
+  rotor1 = list("ghijklmnopqrstuvwxyzabcdef")
+  rotor2 = list("mnopqrstuvwxyzabcdefghijkl")
+  rotor3 = list("stuvwxyzabcdefghijklmnopqr")
 
-def user_input():
+  def _init_(self, pos1, pos2, pos3):
+    self.rotate(self.rotor1, pos1)
+    self.rotate(self.rotor2, pos2)
+    self.rotate(self.rotor3, pos3)
 
-  code = input()
-  return code
+  def rotate(self, rotor, amount):
+    print(f"rotor {rotor} set on position {amount}")
 
-user_input()
+  def enigma_encrypt(self,letter):
+    idx = self.alphabet.index(letter)
+    new_letter = self.rotor1[idx]
+    print("letter : " + letter + "\tnew_letter: " + new_letter)
+    
+    idx = self.alphabet.index(new_letter)
+    new_letter = self.rotor2[idx]
+    print("letter : " + letter + "\tnew_letter: " + new_letter)
 
-def enigma_encrypt():
-
-  code = user_input()
+    idx = self.alphabet.index(new_letter)
+    new_letter = self.rotor3[idx]
+    print("letter : " + letter + "\tnew_letter: " + new_letter)
