@@ -40,3 +40,25 @@ def shift(text, amount):
 
 sentence = input('Enter sentence here:\n').lower()
 newSentence = ""
+
+
+rotations = 0
+# elke letter encrypten
+for letter in sentence:
+  rotations += 1
+  # voor elke letter moet rotor1 één positie opschuiven
+  process.rotor1 = shift(process.rotor1, 1)
+
+  # rotor twee schuift één positie naar op als rotor 1 een rondje heeft gemaakt 
+  if rotations % 26 == 0:
+    process.rotor2 = shift(process.rotor2, 1)
+
+  # rotor ..
+  if rotations % (26 * 26) == 0:
+    process.rotor3 = shift(process.rotor3, 1)
+
+  if letter == " ":
+    newSentence += " "
+    continue
+  encryptedLetter = process.enigma_encrypt(letter)
+  newSentence += encryptedLetter
