@@ -92,5 +92,20 @@ for letter in sentence:
   encryptedLetter = process.enigma_encrypt(letter)
   newSentence += encryptedLetter
 
+for letter in sentence:
+  #makes sure that the rotors don't shift any further
+  process.rotor1 = shift(process.rotor1, -1)
+
+  #likewise for rotor 2 and 3
+  if rotations % 26 == 0:
+    process.rotor2 = shift(process.rotor2, -1)
+
+  if rotations % (26*26) == 0:
+    process.rotor3 = shift(process.rotor3, -1)
+
+  #don't forget the spacings :D
+  if letter == " ":
+    newSentence += ""
+    continue
   
   print(newSentence)
