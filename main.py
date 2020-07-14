@@ -27,6 +27,18 @@ class Enigma:
     idx = self.alphabet.index(new_letter)
     new_letter = self.rotor3[idx]
     print("letter : " + letter + "\tnew_letter: " + new_letter)
+    
+    #idx = reversed(self.alphabet.index(letter))
+    #new_letter = self.rotor3[idx]
+    #print("letter : " + letter + "\tnew_letter: " +new_letter)
+      
+    #idx = reversed(self.alphabet.index(new_letter))
+    #new_letter = self.rotor2[idx]
+    #print("letter : " + letter + "\tnew_letter: " +new_letter)
+
+    #idx = reversed(self.alphabet.index(new_letter))
+    #new_letter = self.rotor1[idx]
+    #print("letter : " + letter + "\tnew_letter: " +new_letter)
 
     reflector_1 = {'a':'n','b':'o','c':'p','d':'q','e':'r','f':'s','g':'t','h':'u','i':'v','j':'w','k':'x','l':'y','m':'z'}
 
